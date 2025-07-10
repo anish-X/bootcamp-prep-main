@@ -37,4 +37,22 @@ let animalNoises = [
   }
 ];
 
+//petSounds('dog', 'Korea');
+//toEqual('Dogs in Korea say Mong mong!');
 // YOUR CODE BELOW
+
+const petSounds = (animalName, place) => { 
+
+  for(let i = 0; i < animalNoises.length; i++){
+    let animalObject = animalNoises[i];
+    if(animalObject[animalName]){
+        let countrySound = animalObject[animalName];
+        let sound = countrySound[place];
+
+        let formattedName = animalName[0].toUpperCase() + animalName.slice(1) +'s';
+
+        return `${formattedName} in ${place} say ${sound}`;
+    }
+  }
+
+}
