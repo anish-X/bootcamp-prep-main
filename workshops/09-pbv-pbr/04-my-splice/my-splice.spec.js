@@ -1,4 +1,4 @@
-describe('mySplice', () => {
+describe('if', () => {
 
   it('is a function', () => {
     expect(typeof mySplice).toEqual('function');
