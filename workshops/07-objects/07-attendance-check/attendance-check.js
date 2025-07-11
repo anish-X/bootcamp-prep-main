@@ -38,20 +38,23 @@ let classRoom = [
 ];
 
 // YOUR CODE BELOW
+
 const attendanceCheck = (day) => {
-  let presentStudents = [];
-
-  for (let student of classRoom) {
-    let studentName = Object.keys(student)[0];
-    let attendance = student[studentName];
-
-    for (let record of attendance) {
-      if (record[day]) {
-        presentStudents.push(studentName);
-        break; 
+debugger;
+    let presentStudent = []
+    for( let i = 0; i < classRoom.length; i++){
+        let objectInitial = classRoom[i];
+        for(let objectNameKey in objectInitial){
+            let attandanceArray = objectInitial[objectNameKey]
+            for(let dayObject of attandanceArray){
+                if(dayObject[day]){
+                    presentStudent.push(objectNameKey);
+                    break;
+                }
+            }
+        }   
     }
-  }
-  }
-  return presentStudents;
+    return presentStudent;
 
 }
+attendanceCheck('Tuesday');
